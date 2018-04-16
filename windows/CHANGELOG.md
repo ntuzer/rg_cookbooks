@@ -2,6 +2,37 @@
 
 This file is used to list changes made in each version of the windows cookbook.
 
+## 4.1.4 (2018-03-29)
+
+- Raise in windows_feature_powershell if we're on PS < 3.0
+
+## 4.1.3 (2018-03-28)
+
+- Restore support for Windows 2008 R2 in windows_feature_dism
+
+## 4.1.2 (2018-03-27)
+
+- Improve creation messaging for shares
+- Allow feature names to be case insensitive in windows_feature
+
+## 4.1.1 (2018-03-23)
+
+- Simplify delete action slightly in windows_pagefile
+- Don't use win_friendly_path helper in windows_pagefile since we already coerce the path value
+
+## 4.1.0 (2018-03-21)
+
+- Adds Caching for WIndows Feature Powershell resource using the same sort of logic we use on windows_feature_dism. This gives us a 3.5X speedup when no features need to be changed (subsequent runs after the change)
+- Warn if we're on w2k12 and trying to use source/management properties in windows_feature_powershell since that doesn't work.
+- Properly parse features into arrays so installing an array of features works in dism/powershell. This is the preferred way to install a number of features and will be faster than a large number of feature resources
+- Fix description of properties for pagefile in the readme
+
+## 4.0.2 (2018-03-20)
+
+- Enable FC016 testing
+- Enable FC059 testing
+- Properly calculate available packages if source is passed in windows_feature_dism resource
+
 ## 4.0.1 (2018-03-07)
 
 Fix the previous update to windows_feature_dism to use 'override' level of attributes not the normal level which persists to the node. Thanks to @Annih for pointing out the mistake here.
