@@ -1,10 +1,10 @@
 
-default['ruby-ng']['ruby_version'] = "2.4"
-default['nodejs']['version'] = "6.10.1"
-default['nodejs']['npm']['version'] = "5.2.0"
+default['ruby-ng']['ruby_version'] = "2.4.1"
+default['nodejs']['version'] = "9.7.1"
+default['nodejs']['npm']['version'] = "5.6.0"
 default['nginx']['default_site_enabled'] = false
 
-default[:eventide][:git_repository] = "https://github.com/chungkikelly/eventide/"
+default[:eventide][:git_repository] = "https://github.com/ntuzer/eventide/"
 default[:eventide][:git_revision] = "master"
 default[:eventide][:path] = "/opt/eventide"
 
